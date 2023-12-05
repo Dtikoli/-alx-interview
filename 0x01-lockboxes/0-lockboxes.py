@@ -5,6 +5,9 @@
 
 def canUnlockAll(boxes):
     """ Determines if boxes can be unlocked """
+    if not boxes[0]:
+        return False
+
     unlocked = {0}
 
     for index, box in enumerate(boxes):
