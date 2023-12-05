@@ -5,10 +5,12 @@
 
 def canUnlockAll(boxes):
     """ Determines if boxes can be unlocked """
-    unlocked = {0}
+    unlocked = {}
 
     for index, box in enumerate(boxes):
+        if len(box) == 0 or index == 0:
+            unlocked[index] = index
         for key in box:
             if key < len(boxes) and key != index:
-                unlocked.add(key)
+                unlocked[key] = key
     return len(unlocked) == len(boxes)
